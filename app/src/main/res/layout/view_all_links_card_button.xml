@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="48dp"
     app:cardCornerRadius="8dp"
+    android:backgroundTint="@color/white"
     android:layout_gravity="center_horizontal"
     app:strokeColor="@color/icon_text_center_card_stroke">
 
@@ -26,13 +27,16 @@
 
         <TextView
             android:id="@+id/sub_text"
+            style="@style/card_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
             android:layout_gravity="center_vertical"
-            android:text="View All Links"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/figtree"
             android:lineSpacingExtra="5sp"
-            android:textAppearance="@style/text_style" />
+            android:text="View All Links"
+            android:textAppearance="@style/text_style"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

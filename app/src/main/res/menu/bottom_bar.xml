@@ -4,32 +4,27 @@
     <item
         android:id="@+id/dashboard_fragment"
         android:icon="@drawable/link_icon_inactive"
-        app:showAsAction="always"
         android:title="Link"
-        />
+        app:showAsAction="always" />
     <item
         android:id="@+id/courses_fragment"
         android:icon="@drawable/courses"
-        app:showAsAction="always"
         android:title="Courses"
-        />
+        app:showAsAction="always" />
     <item
         android:id="@+id/stub"
-        android:icon="@android:color/transparent"
-        />
+        android:icon="@android:color/transparent" />
     <item
         android:id="@+id/campaign_fragment"
         android:icon="@drawable/campaigns"
-        app:showAsAction="always"
         android:title="Campaign"
-        />
+        app:showAsAction="always" />
 
     <item
         android:id="@+id/profile_fragment"
         android:icon="@drawable/profile"
-        app:showAsAction="always"
         android:title="Profile"
-        />
+        app:showAsAction="always" />
 
 
 </menu>

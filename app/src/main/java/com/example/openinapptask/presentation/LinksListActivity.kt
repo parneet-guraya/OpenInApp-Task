@@ -2,6 +2,7 @@ package com.example.openinapptask.presentation
 
 import android.os.Build
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -32,6 +33,7 @@ class LinksListActivity : AppCompatActivity() {
         })
 
         setupAdapter()
+        binding.backButton.setOnClickListener { finish() }
 
         intent.extras?.run {
             val linkLinksListType: LinksListType? =
@@ -100,9 +102,21 @@ class LinksListActivity : AppCompatActivity() {
 
     private fun <T> handleResponse(response: Response<T>, onSuccess: (result: T) -> Unit) {
         when (response) {
-            is Response.Error -> {}
-            Response.Loading -> {}
-            is Response.Success -> onSuccess(response.result)
+            is Response.Error -> {
+                binding.progressIndicator.visibility = View.GONE
+                ViewUtils.showSnackBar(binding.root, response.message)
+            }
+
+            Response.Loading -> {
+                binding.progressIndicator.visibility = View.VISIBLE
+                binding.linkCardsList.visibility = View.GONE
+            }
+
+            is Response.Success -> {
+                onSuccess(response.result)
+                binding.progressIndicator.visibility = View.GONE
+                binding.linkCardsList.visibility = View.VISIBLE
+            }
         }
     }
 }

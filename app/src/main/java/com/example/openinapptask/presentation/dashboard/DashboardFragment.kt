@@ -96,7 +96,7 @@ class DashboardFragment : Fragment() {
                     val card1 = binding.linkCard1
                     val card2 = binding.linkCard2
                     val card3 = binding.linkCard3
-                    val card4 = binding.linkCard3
+                    val card4 = binding.linkCard4
 
                     card1.linkName.text = list[0].title
                     card1.linkCreationDate.text = list[0].createdAt
@@ -179,9 +179,20 @@ class DashboardFragment : Fragment() {
 
     private fun <T> handleResponse(response: Response<T>, onSuccess: (result: T) -> Unit) {
         when (response) {
-            is Response.Error -> {}
-            Response.Loading -> {}
-            is Response.Success -> onSuccess(response.result)
+            is Response.Error -> {
+                binding.progressIndicator.visibility = View.GONE
+                ViewUtils.showSnackBar(binding.root, response.message)
+            }
+
+            Response.Loading -> {
+                binding.progressIndicator.visibility = View.VISIBLE
+            }
+
+            is Response.Success -> {
+                onSuccess(response.result)
+                binding.progressIndicator.visibility = View.GONE
+                binding.contentView.visibility = View.VISIBLE
+            }
         }
     }
 

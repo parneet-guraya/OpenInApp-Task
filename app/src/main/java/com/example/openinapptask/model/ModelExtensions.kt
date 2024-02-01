@@ -1,8 +1,11 @@
 package com.example.openinapptask.model
 
+import android.annotation.SuppressLint
 import com.example.openinapptask.data.model.DashboardApiModel
 import com.example.openinapptask.data.model.DashboardDataApiModel
 import com.example.openinapptask.data.model.LinkApiModel
+import java.text.SimpleDateFormat
+import java.util.Date
 
 fun DashboardApiModel.toUIModel(): Dashboard {
     return Dashboard(
@@ -33,10 +36,19 @@ fun LinkApiModel.toUIModel(): Link {
         title = title,
         totalClicks = totalClicks,
         originalImage = originalImage,
-        createdAt = createdAt,
+        createdAt = createdAt.substringBefore('T').toUIDateFormat(),
         domainId = domainId,
         urlSuffix = urlSuffix,
         app = app,
         isFavourite = isFavourite
     )
+}
+
+@SuppressLint("SimpleDateFormat")
+fun String.toUIDateFormat(): String {
+    val apiDateFormat = SimpleDateFormat("yyyy-MM-dd")
+    val date: Date = apiDateFormat.parse(this)!!
+
+    val desiredFormat = SimpleDateFormat("dd MMM yy")
+    return desiredFormat.format(date)
 }

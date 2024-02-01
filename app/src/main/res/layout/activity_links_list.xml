@@ -7,6 +7,18 @@
     android:background="@color/background"
     tools:context=".presentation.LinksListActivity">
 
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progress_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:indicatorColor="@color/primary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/custom_action_bar" />
+
     <LinearLayout
         android:id="@+id/custom_action_bar"
         android:layout_width="match_parent"
@@ -19,11 +31,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/baseline_arrow_back_24" />
+
         <TextView
             android:id="@+id/destination_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="16dp"
+            android:gravity="start|center_vertical"
             android:lineSpacingExtra="-5sp"
             android:text="Links"
             android:textColor="@color/black"
@@ -40,54 +61,62 @@
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/custom_action_bar">
 
-        <Button
-            android:id="@+id/button_top_links"
-            android:layout_width="wrap_content"
+        <HorizontalScrollView
+            android:id="@+id/list_buttons_container"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@android:color/transparent"
-            android:textColor="@color/inactive_text_color"
-            android:text="Top Links"
-            app:layout_constraintEnd_toStartOf="@+id/button_recent_links"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintHorizontal_chainStyle="spread_inside"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/button_recent_links"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@android:color/transparent"
-            android:textColor="@color/inactive_text_color"
-            android:text="Recent Links"
-            app:layout_constraintEnd_toStartOf="@+id/button_fav_links"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/button_top_links"
-            app:layout_constraintTop_toTopOf="@id/button_top_links" />
-
-        <Button
-            android:id="@+id/button_fav_links"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@android:color/transparent"
-            android:textColor="@color/inactive_text_color"
-            android:text="Recent Links"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/button_recent_links"
-            app:layout_constraintTop_toTopOf="@id/button_top_links" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button_top_links"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@android:color/transparent"
+                    android:text="Top Links"
+                    android:textColor="@color/inactive_text_color" />
+
+                <Button
+                    android:id="@+id/button_recent_links"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@android:color/transparent"
+                    android:text="Recent Links"
+                    android:textColor="@color/inactive_text_color" />
+
+                <Button
+                    android:id="@+id/button_fav_links"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@android:color/transparent"
+                    android:text="Favourite Links"
+                    android:textColor="@color/inactive_text_color" />
+            </LinearLayout>
+        </HorizontalScrollView>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/link_cards_list"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="8dp"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button_top_links" />
+            app:layout_constraintTop_toBottomOf="@id/list_buttons_container" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

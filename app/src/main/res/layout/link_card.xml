@@ -3,6 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="116dp"
+    android:clickable="true"
+    android:backgroundTint="@color/white"
     android:layout_marginBottom="20dp">
 
     <RelativeLayout
@@ -32,6 +34,7 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="2dp"
                 android:layout_marginEnd="8dp"
+                android:fontFamily="@font/figtree"
                 android:gravity="center_vertical"
                 android:lineSpacingExtra="7sp"
                 android:maxLines="1"
@@ -49,6 +52,7 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="2dp"
                 android:layout_marginEnd="8dp"
+                android:fontFamily="@font/figtree"
                 android:gravity="center_vertical"
                 android:lineSpacingExtra="4sp"
                 android:maxLines="1"
@@ -65,6 +69,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
+                android:fontFamily="@font/figtree"
                 android:foregroundGravity="center"
                 android:gravity="center_vertical"
                 android:lineSpacingExtra="7sp"
@@ -79,6 +84,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
+                android:fontFamily="@font/figtree"
                 android:gravity="center_vertical"
                 android:lineSpacingExtra="4sp"
                 android:text="Clicks"
@@ -128,6 +134,7 @@
                 android:id="@+id/smart_link_text"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/figtree"
                 android:text="null"
                 android:textColor="#0E6FFF"
                 android:textSize="14sp"

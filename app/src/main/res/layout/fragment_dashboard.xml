@@ -1,207 +1,233 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    android:paddingStart="16dp"
-    android:paddingTop="32dp"
-    android:paddingEnd="16dp"
-    android:scrollbars="none"
     tools:context=".presentation.dashboard.DashboardFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
-
-        <TextView
-            android:id="@+id/greetings_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:lineSpacingExtra="5sp"
-            android:text="Good Morning"
-            android:textColor="#999CA0"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/user_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:lineSpacingExtra="3sp"
-            android:text="Parneet Singh 👋"
-            android:textColor="@color/black"
-            android:textSize="24sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/greetings_text" />
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/chart_view_container"
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/progress_indicator"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginTop="24dp"
-            android:clickable="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/user_name">
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            android:layout_gravity=""
+            android:indeterminate="true"
+            app:indicatorColor="@color/primary" />
 
-            <com.patrykandpatrick.vico.views.chart.ChartView
-                android:id="@+id/chart_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:chart="line"
-                app:fadingEdgeWidth="10dp"
-                app:showBottomAxis="true"
-                app:showStartAxis="true" />
-        </com.google.android.material.card.MaterialCardView>
-
-        <HorizontalScrollView
-            android:id="@+id/quick_insights_container"
+        <ScrollView
+            android:id="@+id/content_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/chart_view_container">
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:background="@color/background"
+            android:paddingStart="16dp"
+            android:paddingTop="32dp"
+            android:paddingEnd="16dp"
+            android:scrollbars="none"
+            android:visibility="gone">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/greetings_text"
+                    style="@style/good_mornin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="5sp"
+                    android:text="Good Morning"
+                    android:textColor="#999CA0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/user_name"
+                    style="@style/user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="3sp"
+                    android:text="Parneet Singh 👋"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/greetings_text" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/chart_view_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="24dp"
+                    android:clickable="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/user_name">
+
+                    <com.patrykandpatrick.vico.views.chart.ChartView
+                        android:id="@+id/chart_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:chart="line"
+                        android:clickable="true"
+                        app:fadingEdgeWidth="10dp"
+                        app:showBottomAxis="true"
+                        app:showStartAxis="true" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <HorizontalScrollView
+                    android:id="@+id/quick_insights_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/chart_view_container">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+
+                        <include
+                            android:id="@+id/quick_in_today_clicks"
+                            layout="@layout/quick_insighs_card" />
+
+                        <include
+                            android:id="@+id/quick_in_top_location"
+                            layout="@layout/quick_insighs_card" />
+
+                        <include
+                            android:id="@+id/quick_in_top_source"
+                            layout="@layout/quick_insighs_card" />
+                    </LinearLayout>
+
+                </HorizontalScrollView>
 
                 <include
-                    android:id="@+id/quick_in_today_clicks"
-                    layout="@layout/quick_insighs_card" />
+                    android:id="@+id/button_view_analytics"
+                    layout="@layout/view_analytics_card_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/quick_insights_container" />
+
+                <Button
+                    android:id="@+id/button_top_links"
+                    style="@style/inactive_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:backgroundTint="@android:color/transparent"
+                    android:fontFamily="@font/figtree"
+                    android:text="Top Links"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/button_view_analytics" />
+
+                <Button
+                    android:id="@+id/button_recent_links"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="40dp"
+                    style="@style/inactive_text"
+                    android:backgroundTint="@android:color/transparent"
+                    android:fontFamily="@font/figtree"
+                    android:text="Recent Links"
+                    app:layout_constraintStart_toEndOf="@id/button_top_links"
+                    app:layout_constraintTop_toBottomOf="@id/button_view_analytics" />
+
+                <ImageButton
+                    android:id="@+id/settings_button"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/search_button_bg"
+                    android:src="@drawable/search_icon"
+                    app:layout_constraintBottom_toBottomOf="@id/button_top_links"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/button_top_links" />
 
                 <include
-                    android:id="@+id/quick_in_top_location"
-                    layout="@layout/quick_insighs_card" />
+                    android:id="@+id/link_card_1"
+                    layout="@layout/link_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="116dp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/button_top_links" />
 
                 <include
-                    android:id="@+id/quick_in_top_source"
-                    layout="@layout/quick_insighs_card" />
-            </LinearLayout>
+                    android:id="@+id/link_card_2"
+                    layout="@layout/link_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="116dp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/link_card_1" />
 
-        </HorizontalScrollView>
+                <include
+                    android:id="@+id/link_card_3"
+                    layout="@layout/link_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="116dp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/link_card_2" />
 
-        <include
-            android:id="@+id/button_view_analytics"
-            layout="@layout/view_analytics_card_button"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/quick_insights_container" />
+                <include
+                    android:id="@+id/link_card_4"
+                    layout="@layout/link_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="116dp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/link_card_3" />
 
-        <Button
-            android:id="@+id/button_top_links"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:backgroundTint="@android:color/transparent"
-            android:textColor="@color/inactive_text_color"
-            android:text="Top Links"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button_view_analytics" />
-
-        <Button
-            android:id="@+id/button_recent_links"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="40dp"
-            android:textColor="@color/inactive_text_color"
-            android:backgroundTint="@android:color/transparent"
-            android:text="Recent Links"
-            android:textSize="16sp"
-            app:layout_constraintStart_toEndOf="@id/button_top_links"
-            app:layout_constraintTop_toBottomOf="@id/button_view_analytics" />
-
-        <ImageButton
-            android:id="@+id/settings_button"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@drawable/search_button_bg"
-            android:src="@drawable/search_icon"
-            app:layout_constraintBottom_toBottomOf="@id/button_top_links"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/button_top_links" />
-
-        <include
-            android:id="@+id/link_card_1"
-            layout="@layout/link_card"
-            android:layout_width="match_parent"
-            android:layout_height="116dp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/settings_button" />
-
-        <include
-            android:id="@+id/link_card_2"
-            layout="@layout/link_card"
-            android:layout_width="match_parent"
-            android:layout_height="116dp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/link_card_1" />
-
-        <include
-            android:id="@+id/link_card_3"
-            layout="@layout/link_card"
-            android:layout_width="match_parent"
-            android:layout_height="116dp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/link_card_2" />
-
-        <include
-            android:id="@+id/link_card_4"
-            layout="@layout/link_card"
-            android:layout_width="match_parent"
-            android:layout_height="116dp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/link_card_3" />
-
-        <include
-            android:id="@+id/view_all_links"
-            layout="@layout/view_all_links_card_button"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/link_card_4" />
+                <include
+                    android:id="@+id/view_all_links"
+                    layout="@layout/view_all_links_card_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/link_card_4" />
 
 
-        <include
-            android:id="@+id/chat_with_us"
-            layout="@layout/talk_with_us_whatsapp"
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/view_all_links" />
+                <include
+                    android:id="@+id/chat_with_us"
+                    layout="@layout/talk_with_us_whatsapp"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/view_all_links" />
 
-        <include
-            android:id="@+id/frequently_asked_questions"
-            layout="@layout/frequently_asked_questions"
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/chat_with_us" />
+                <include
+                    android:id="@+id/frequently_asked_questions"
+                    layout="@layout/frequently_asked_questions"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/chat_with_us" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-</ScrollView>
+        </ScrollView>
+
+    </RelativeLayout>
+</LinearLayout>

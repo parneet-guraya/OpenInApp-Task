@@ -16,4 +16,33 @@
         <item name="android:statusBarColor">@color/background</item>
     </style>
 
+    <style name="good_mornin">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#999CA0</item>
+    </style>
+
+    <style name="user_name">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <style name="quick_insights_card_subtext">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#999CA0</item>
+    </style>
+
+    <style name="card_text">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <style name="sp16_white_text">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="inactive_text">
+        <item name="android:textColor">@color/inactive_text_color</item>
+        <item name="android:textSize">16sp</item>
+    </style>
 </resources>

@@ -98,7 +98,6 @@
                 app:itemIconSize="32dp"
                 app:itemRippleColor="@android:color/transparent"
                 app:itemActiveIndicatorStyle="@color/primary"
-                app:itemTextAppearanceActive="@drawable/link_icon"
                 app:labelVisibilityMode="labeled"
                 app:menu="@menu/bottom_bar" />
 
