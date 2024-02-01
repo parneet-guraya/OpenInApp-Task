@@ -1,8 +1,12 @@
 package com.example.openinapptask.presentation
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.content.res.Resources
 import android.graphics.drawable.Drawable
 import android.widget.Button
+import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import com.example.openinapptask.R
 
@@ -14,15 +18,32 @@ fun Int.toColor(resources: Resources): Int {
     return ResourcesCompat.getColor(resources, this, null)
 }
 
-fun Button.updateButtonStyle(isSelected: Boolean) {
-    setBackgroundColor(
-        if (isSelected) R.color.primary.toColor(resources) else android.R.color.transparent.toColor(
-            resources
-        )
-    )
-    setTextColor(
-        if (isSelected) R.color.white.toColor(resources) else R.color.inactive_text_color.toColor(
-            resources
-        )
-    )
+object ViewUtils {
+    fun copyTextToClipboard(text: String, context: Context) {
+        val clipboard =
+            ContextCompat.getSystemService(context, ClipboardManager::class.java)
+        clipboard?.let {
+            val clip: ClipData = ClipData.newPlainText("Copied:", text)
+            it.setPrimaryClip(clip)
+        }
+    }
+
+    fun toggleButtonStyle(
+        resources: Resources,
+        newButton: Button,
+        currentlySelected: Button,
+        activeColor: Int,
+        activeTextColor: Int = R.color.white,
+        inActiveTextColor: Int = R.color.inactive_text_color,
+        inActiveColor: Int = android.R.color.transparent
+    ) {
+        println("new selected button")
+        newButton.setBackgroundColor(activeColor.toColor(resources))
+        newButton.setTextColor(activeTextColor.toColor(resources))
+
+        if(newButton != currentlySelected){
+            currentlySelected.setBackgroundColor(inActiveColor.toColor(resources))
+            currentlySelected.setTextColor(inActiveTextColor.toColor(resources))
+        }
+    }
 }

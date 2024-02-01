@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     kotlin("plugin.serialization") version "1.9.21"
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 }
 
 android {
@@ -36,6 +37,7 @@ android {
     }
     buildFeatures{
         viewBinding = true
+        buildConfig = true
     }
 }
 
@@ -61,6 +63,10 @@ dependencies {
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
 
     implementation("com.patrykandpatrick.vico:views:1.13.1")
+
+    // datastore
+    implementation ("androidx.datastore:datastore-preferences:1.0.0")
+    implementation ("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
 
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")

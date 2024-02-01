@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/background"
     android:paddingStart="16dp"
     android:paddingTop="32dp"
     android:paddingEnd="16dp"
     android:scrollbars="none"
-    tools:context=".DashboardFragment">
+    tools:context=".presentation.dashboard.DashboardFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -102,6 +102,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:backgroundTint="@android:color/transparent"
+            android:textColor="@color/inactive_text_color"
             android:text="Top Links"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -113,6 +114,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="40dp"
+            android:textColor="@color/inactive_text_color"
             android:backgroundTint="@android:color/transparent"
             android:text="Recent Links"
             android:textSize="16sp"
@@ -129,14 +131,56 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/button_top_links" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/link_cards_list"
+        <include
+            android:id="@+id/link_card_1"
+            layout="@layout/link_card"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
+            android:layout_height="116dp"
+            android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button_top_links" />
+            app:layout_constraintTop_toBottomOf="@id/settings_button" />
+
+        <include
+            android:id="@+id/link_card_2"
+            layout="@layout/link_card"
+            android:layout_width="match_parent"
+            android:layout_height="116dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/link_card_1" />
+
+        <include
+            android:id="@+id/link_card_3"
+            layout="@layout/link_card"
+            android:layout_width="match_parent"
+            android:layout_height="116dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/link_card_2" />
+
+        <include
+            android:id="@+id/link_card_4"
+            layout="@layout/link_card"
+            android:layout_width="match_parent"
+            android:layout_height="116dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/link_card_3" />
+
+        <include
+            android:id="@+id/view_all_links"
+            layout="@layout/view_all_links_card_button"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/link_card_4" />
+
 
         <include
             android:id="@+id/chat_with_us"
@@ -146,7 +190,7 @@
             android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/link_cards_list" />
+            app:layout_constraintTop_toBottomOf="@id/view_all_links" />
 
         <include
             android:id="@+id/frequently_asked_questions"

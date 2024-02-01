@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:clipChildren="false"
     android:orientation="vertical"
-    android:background="@color/white"
+    android:background="@color/background"
     tools:context=".presentation.MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -23,6 +23,7 @@
         android:paddingBottom="44dp">
 
         <TextView
+            android:id="@+id/destination_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"

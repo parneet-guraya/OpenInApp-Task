@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="116dp"
-    android:layout_marginBottom="20dp"
-    >
+    android:layout_marginBottom="20dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -36,7 +35,7 @@
                 android:gravity="center_vertical"
                 android:lineSpacingExtra="7sp"
                 android:maxLines="1"
-                android:text="Sample Link Name"
+                android:text="null"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toStartOf="@id/link_click_count"
@@ -53,11 +52,11 @@
                 android:gravity="center_vertical"
                 android:lineSpacingExtra="4sp"
                 android:maxLines="1"
-                android:text="22 Aug 2022"
+                android:text="null"
                 android:textColor="#999CA0"
                 android:textSize="12sp"
-                app:layout_constraintEnd_toStartOf="@id/link_clicks"
                 app:layout_constraintBottom_toBottomOf="@id/image"
+                app:layout_constraintEnd_toStartOf="@id/link_clicks"
                 app:layout_constraintStart_toEndOf="@id/image"
                 app:layout_constraintTop_toBottomOf="@id/link_name" />
 
@@ -69,7 +68,7 @@
                 android:foregroundGravity="center"
                 android:gravity="center_vertical"
                 android:lineSpacingExtra="7sp"
-                android:text="78"
+                android:text="0"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -95,6 +94,7 @@
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:background="@drawable/link_card_icon_bg"
+                android:src="@drawable/outline_img_placeholder_24"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -128,7 +128,7 @@
                 android:id="@+id/smart_link_text"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="https://samplelink.oia.bio/ashd..."
+                android:text="null"
                 android:textColor="#0E6FFF"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"

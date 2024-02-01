@@ -3,11 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/dashboardFragment">
+    app:startDestination="@id/dashboard_fragment">
 
     <fragment
-        android:id="@+id/dashboardFragment"
-        android:name="com.example.openinapptask.DashboardFragment"
+        android:id="@+id/dashboard_fragment"
+        android:name="com.example.openinapptask.presentation.dashboard.DashboardFragment"
         android:label="fragment_dashboard"
         tools:layout="@layout/fragment_dashboard" />
+    <fragment
+        android:id="@+id/campaign_fragment"
+        android:name="com.example.openinapptask.presentation.campaign.CampaignFragment"
+        android:label="fragment_campaign"
+        tools:layout="@layout/fragment_campaign" />
+    <fragment
+        android:id="@+id/courses_fragment"
+        android:name="com.example.openinapptask.presentation.courses.CoursesFragment"
+        android:label="fragment_courses"
+        tools:layout="@layout/fragment_courses" />
+    <fragment
+        android:id="@+id/profile_fragment"
+        android:name="com.example.openinapptask.presentation.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>

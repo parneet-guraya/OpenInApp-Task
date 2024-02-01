@@ -7,6 +7,5 @@
     </style>
 
     <style name="Theme.OpenInAppTask" parent="Base.Theme.OpenInAppTask">
-        <item name="android:statusBarColor">@color/primary</item>
     </style>
 </resources>

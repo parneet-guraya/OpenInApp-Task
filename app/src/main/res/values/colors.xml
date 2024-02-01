@@ -9,4 +9,5 @@
     <color name="icon_text_center_card_stroke">#D8D8D8</color>
     <color name="primary">#0E6FFF</color>
     <color name="inactive_text_color">#999CA0</color>
+    <color name="background">#F5F5F5</color>
 </resources>

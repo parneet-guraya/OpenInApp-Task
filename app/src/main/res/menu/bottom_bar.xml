@@ -2,13 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/links"
+        android:id="@+id/dashboard_fragment"
         android:icon="@drawable/link_icon_inactive"
         app:showAsAction="always"
         android:title="Link"
         />
     <item
-        android:id="@+id/courses"
+        android:id="@+id/courses_fragment"
         android:icon="@drawable/courses"
         app:showAsAction="always"
         android:title="Courses"
@@ -18,17 +18,17 @@
         android:icon="@android:color/transparent"
         />
     <item
-        android:id="@+id/campaign"
+        android:id="@+id/campaign_fragment"
         android:icon="@drawable/campaigns"
         app:showAsAction="always"
-        android:title="Courses"
+        android:title="Campaign"
         />
 
     <item
-        android:id="@+id/profile"
+        android:id="@+id/profile_fragment"
         android:icon="@drawable/profile"
         app:showAsAction="always"
-        android:title="Courses"
+        android:title="Profile"
         />
 
 
