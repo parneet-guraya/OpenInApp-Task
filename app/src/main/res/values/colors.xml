@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="red">#DD0000</color>
+    <color name="today_clicks_icon_color">#1F5C33CF</color>
+    <color name="top_location_icon_color">#1F0E6FFF</color>
+    <color name="top_source_icon_color">#FFFFE9EC</color>
+    <color name="icon_text_center_card_stroke">#D8D8D8</color>
+    <color name="primary">#0E6FFF</color>
+    <color name="inactive_text_color">#999CA0</color>
+</resources>
