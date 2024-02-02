@@ -12,8 +12,7 @@ import com.example.openinapptask.databinding.ActivityLinksListBinding
 import com.example.openinapptask.domain.model.LinksListType
 import com.example.openinapptask.model.Response
 import com.example.openinapptask.presentation.dashboard.DashboardFragment
-import com.example.openinapptask.presentation.dashboard.LinksListViewModel
-import com.example.openinapptask.presentation.dashboard.adapter.LinksListAdapter
+import com.example.openinapptask.presentation.adapter.LinksListAdapter
 
 class LinksListActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLinksListBinding

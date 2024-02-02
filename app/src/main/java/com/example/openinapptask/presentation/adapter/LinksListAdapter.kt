@@ -1,4 +1,4 @@
-package com.example.openinapptask.presentation.dashboard.adapter
+package com.example.openinapptask.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

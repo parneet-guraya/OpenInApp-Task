@@ -1,4 +1,4 @@
-package com.example.openinapptask.presentation.dashboard
+package com.example.openinapptask.presentation
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -14,7 +14,6 @@ import com.example.openinapptask.domain.model.LinksListType
 import com.example.openinapptask.model.Link
 import com.example.openinapptask.model.Response
 import com.example.openinapptask.model.toUIModel
-import com.example.openinapptask.presentation.LinkListButtonTypes
 import kotlinx.coroutines.launch
 
 class LinksListViewModel : ViewModel() {
