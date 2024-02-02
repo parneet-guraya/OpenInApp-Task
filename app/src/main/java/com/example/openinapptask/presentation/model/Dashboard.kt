@@ -1,8 +1,5 @@
 package com.example.openinapptask.model
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
-
 data class Dashboard(
     val supportWhatsappNumber: String,
     val totalClicks: Int,
